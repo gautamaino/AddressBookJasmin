@@ -36,10 +36,14 @@ $( document ).ready(function() {
         $("#newContactForm").hide();
         $("#recordGrid").show();
 
-        var allRecords = "";
+        //var allRecords = "";
+
+        //console.log(allRecords);
+        $("#recordTable tbody").html("");
 
         $.each(allContactList.contactList, function(index, val){
-            allRecords += allRecords +"<tr>" +
+
+            var allRecords = "<tr>" +
             "<td>"+val.name+"</td>"+
             "<td>"+val.email+"</td>"+
             "<td>"+val.phone+"</td>"+
@@ -47,12 +51,23 @@ $( document ).ready(function() {
             "<td>"+index+"</td>"+
             "<td>"+index+"</td>"+
             "</tr>";
+
+            //$("#recordTable tbody").html(allRecords);
+            $("#recordTable tbody").append(allRecords);
+            //allRecords += allRecords +"<tr>" +
+            //"<td>"+val.name+"</td>"+
+            //"<td>"+val.email+"</td>"+
+            //"<td>"+val.phone+"</td>"+
+            //"<td>"+val.address+"</td>"+
+            //"<td>"+index+"</td>"+
+            //"<td>"+index+"</td>"+
+            //"</tr>";
         });
 
-        console.log(allRecords);
+        //console.log(allRecords);
 
 
-        $("#recordTable tbody").html(allRecords);
+        //$("#recordTable tbody").html(allRecords);
 
 
         console.log("inside show div");

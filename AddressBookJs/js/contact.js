@@ -1,19 +1,33 @@
-
-function Contact( fname, lname , phone, email){
-	this.fname = fname ;
-	this.lname = lname ; 
+// create contact object
+function Contact( name, email, phone, address){
+	this.name = name ;
+	//this.lname = lname ;
 	this.phone = phone ;
 	this.email = email ;
+	this.address = address ;
 }
 
-Contact.prototype.validate(){
-	if(this.fname == null);
+
+Contact.prototype.validate = function (){
+	if(this.name == ""){
 		throw new Error("First Name cannot be null");
+	}
+	else if(this.email == ""){
+		throw new Error("Email cannot be null");
+	}
+	else if(this.phone == ""){
+		throw new Error("Phone No cannot be null");
+	}
+	else if(this.address == ""){
+		throw new Error("Address cannot be null");
+	}else {
+		return true;
+	}
 };
 
-Contact.prototype.clear(){
-	this.fname = null ;
-	this.lname = null ;
+Contact.prototype.clear = function(){
+	this.name = null ;
 	this.phone = null;
-	this.email = null ;
+	this.email = null;
+	this.address = null;
 };

@@ -4,42 +4,85 @@
 <meta charset="UTF-8">
 '
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<title></title>
-<script src="js/action.js"></script>
-<script src="js/record.json"></script>
+<title> Address Book Jasmin</title>
+
 </head>
+<!--<body>-->
+	<!--<div class="page">-->
+		<!--<h2>Address Book</h2>-->
+		<!--<div class="btnDiv">-->
+			<!--<button type="button" id="addNew" onclick="add_New()">Add-->
+				<!--New</button>-->
+			<!--<button type="button" id="viewRecord" onclick="view_Records()">View Records</button>-->
+		<!--</div>-->
+		<!--<hr>-->
+		<!--<div class="formDiv" id="formDiv">-->
+
+			<!--<img src="images/default.jpg" id="profile"><br> Image : <input-->
+				<!--type="file" id="image"> <a href="#" id="select_image"-->
+				<!--onclick="changeDP()">Set Image</a>-->
+
+			<!--<p>-->
+				<!--Name &nbsp;&nbsp;: <input type="text" id="name"-->
+					<!--placeholder="Enter Your Name" onblur="validateText(this.value)" /><br>-->
+				<!--Email &nbsp;&nbsp;: <input type="text" id="email" name="email"-->
+					<!--placeholder="Email" onblur="ValidateEmail(this.value)" /><br>-->
+				<!--Contact : <input type="text" id="contact" placeholder="Contact"-->
+					<!--onblur="validateContact(this.value)" /><br> Address : <input-->
+					<!--type="text" id="address" placeholder="Address" /><br>-->
+				<!--<button type="button" id="saveBtn" class="btn" onclick="saveData()"-->
+					<!--name="save">Save</button>-->
+				<!--<button type="button" id="updateBtn" class="btn"-->
+					<!--onclick="updateData()" name="update">Update</button>-->
+				<!--<br> <label id="message"></label>-->
+			<!--</p>-->
+		<!--</div>-->
+		<!--<div class="recordGrid" id="recordGrid">-->
+			<!--<table border="0" id="recordTable">-->
+				<!--<tr>-->
+					<!--<th>Name</th>-->
+					<!--<th>Email</th>-->
+					<!--<th>contact</th>-->
+					<!--<th>Address</th>-->
+					<!--<th>Edit</th>-->
+					<!--<th>Delete</th>-->
+
+				<!--</tr>-->
+			<!--</table>-->
+		<!--</div>-->
+		<!--<div class="footer"></div>-->
+	<!--</div>-->
+<!--</body>-->
+
+
 <body>
-	<div class="page">
-		<h2>Address Book</h2>
-		<div class="btnDiv">
-			<button type="button" id="addNew" onclick="add_New()">Add
-				New</button>
-			<button type="button" id="viewRecord" onclick="view_Records()">View Records</button>
-		</div>
-		<hr>
-		<div class="formDiv" id="formDiv">
 
-			<img src="images/default.jpg" id="profile"><br> Image : <input
-				type="file" id="image"> <a href="#" id="select_image"
-				onclick="changeDP()">Set Image</a>
+<div class="page">
+	<h2>Address Book</h2>
+	<div class="btnDiv">
+		<button type="button" id="addNewContact" >Add New</button>
+		<button type="button" id="viewRecords" >View Records</button>
+	</div>
+	<hr>
+	<div id="newContactForm">
+		<form class="formDiv" id="contactForm" onsubmit="return false;">
+			<img src="images/default.jpg" id="profile"><br>
+			Image : <input type="file" id="image"> <a href="#" id="select_image" >Set Image</a>
+			<p>	Name &nbsp;&nbsp;: <input type="text" id="userName" placeholder="Enter Your Name"  /><br>
+				Email &nbsp;&nbsp;: <input type="text" id="userEmail" name="email" placeholder="Email"  /><br>
+				Contact : <input type="text" id="userContact" placeholder="Contact"  /><br>
+				Address : <input type="text" id="userAddress" placeholder="Address" /><br>
 
-			<p>
-				Name &nbsp;&nbsp;: <input type="text" id="name"
-					placeholder="Enter Your Name" onblur="validateText(this.value)" /><br>
-				Email &nbsp;&nbsp;: <input type="text" id="email" name="email"
-					placeholder="Email" onblur="ValidateEmail(this.value)" /><br>
-				Contact : <input type="text" id="contact" placeholder="Contact"
-					onblur="validateContact(this.value)" /><br> Address : <input
-					type="text" id="address" placeholder="Address" /><br>
-				<button type="button" id="saveBtn" class="btn" onclick="saveData()"
-					name="save">Save</button>
-				<button type="button" id="updateBtn" class="btn"
-					onclick="updateData()" name="update">Update</button>
-				<br> <label id="message"></label>
+				<button type="submit" id="saveBtn" class="btn" 	name="save">Save</button>
+				<button type="button" id="updateBtn" class="btn" name="update">Update</button>
+				<br> <label id="errorMessage"></label>
 			</p>
-		</div>
-		<div class="recordGrid" id="recordGrid">
-			<table border="0" id="recordTable">
+		</form>
+	</div>
+
+	<div class="recordGrid" id="recordGrid">
+		<table border="0" id="recordTable">
+			<thead>
 				<tr>
 					<th>Name</th>
 					<th>Email</th>
@@ -47,11 +90,19 @@
 					<th>Address</th>
 					<th>Edit</th>
 					<th>Delete</th>
-
 				</tr>
-			</table>
-		</div>
-		<div class="footer"></div>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
 	</div>
+	<div class="footer" >Footer</div>
+</div>
 </body>
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/contacts.js"></script>
+<script src="js/main.js"></script>
+<script src="js/record.json"></script>
 </html>
